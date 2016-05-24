@@ -11,6 +11,12 @@ User.destroy_all
 puts "Destroying all friendships"
 Friending.destroy_all
 
+def generate_admin
+  @admin = User.new(email: 'admin@test.com', password: 'password', first_name: 'admin', last_name: 'user')
+  @admin.build_profile(birthday: Faker::Time.between(DateTime.now - 100, DateTime.now), hometown: Faker::Address.city, current_location: Faker::Address.city, school: "VikingCodeSchool", motto: Faker::Hipster.sentence(3), about: Faker::Hipster.paragraph, telephone: Faker::PhoneNumber.cell_phone, gender: %w[mail female].sample)
+end
+
+generate_admin
 
 def generate_users
   pw = Faker::Internet.password(8)
@@ -24,12 +30,13 @@ def generate_friendships
   begin
     friend_initiator = User.all.sample
     friend_receiver = User.all.sample
-  end while friend_initiator == friend_receiver
+  end while friend_initiator == friend_receiver && friend_initiator != @admin
+  friend_initiator.friended_users << @admin unless friend_initiator.friended_users.include?(@admin)
   friend_initiator.friended_users << friend_receiver unless friend_initiator.friended_users.include?(friend_receiver)
 end
 
 def generate_posts(user)
-  post = user.posts.build(body: Faker::Hipster.sentence(rand(1..3)))
+  post = user.posts.build(body: Faker::Hipster.sentence(rand(1..5)))
   post.save!
 end
 
