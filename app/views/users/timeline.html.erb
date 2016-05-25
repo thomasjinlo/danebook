@@ -6,45 +6,45 @@
       <div class="about-row row">
         <div class="about-wrapper col-sm-12">
 
-          <div class="about-header row">
-            About (Text Area)
+          <div class="about-header row text-center">
+            About
           </div>
 
 
           <div class="content row">
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-xs-4 col-xs-offset-1">
               <strong>Birthday:</strong>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-xs-6 about-info">
               <%= @user.profile.birthday %>
             </div>
           </div>
 
           <div class="content row">
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-xs-4 col-xs-offset-1">
               <strong>College:</strong>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-xs-6 about-info">
               <%= @user.profile.school %>
             </div>
           </div>
 
           <div class="content row">
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-xs-4 col-xs-offset-1">
               <strong>Hometown:</strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-xs-6 about-info">
               <%= @user.profile.hometown %>
             </div>
            </div>
 
          <div class="content row">
-          <div class="col-md-3 col-md-offset-1">
+          <div class="col-xs-4 col-xs-offset-1">
             <strong>Current location:</strong>
           </div>
-          <div class="col-md-8">
+          <div class="col-xs-6 about-info">
             <%= @user.profile.current_location %>
           </div>
          </div>
@@ -56,12 +56,12 @@
         <!-- Photos Wrapper -->
         <div class="photos-wrapper col-sm-12">
           <!-- Header Row -->
-          <div class="photos-header row">
+          <div class="photos-header row text-center">
             Photos (<%= @user.photos.size %>)
           </div>
 
 
-        <footer class="photos-footer row">
+        <footer class="photos-footer row text-center">
           <a href="#" class="more-photos">See More Photos</a>
         </footer>
 
@@ -70,19 +70,19 @@
           <!-- friends Wrapper -->
           <div class="friends-wrapper col-sm-12">
             <!-- Header Row -->
-            <div class="friends-header row">
+            <div class="friends-header row text-center">
               Friends (<%= @user.friended_users.count %>)
             </div>
             <% @friends.each do |friend| %>
               <!-- Thumbnail wrapper -->
               <% unless friend.nil? %>
-                <div class="thumbnails col-md-4">
+                <div class="thumbnails col-xs-4">
                   <a href="#"><img src="/images/default_user.gif", class="timeline-img img-thumbnail img-responsive"></a>
                   <%= link_to "#{friend.first_name} #{friend.last_name}", friend %>
                 </div>
               <% end %>
             <% end %>
-            <footer class="friends-footer row">
+            <footer class="friends-footer col-xs-12 text-center">
               <a href="#" class="more-friends">See More friends</a>
             </footer>
           </div>
