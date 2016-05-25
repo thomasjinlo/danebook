@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.layout {
+  background-color: #e9ebee;
+}
+
 .navbar-default .blue {
   background-color: #3B5998;
   color: white; }
@@ -33,6 +43,10 @@
   box-shadow: 5px 5px 2px #000;
   font-size: 28px; }
 
+.center {
+  display: inline-block;
+  margin: 0 auto;
+}
 
 
 
@@ -44,7 +58,10 @@
 .container-fluid {
   border: 1px solid; }
   .container #cover-photo {
-    max-height: 400px; }
+    margin: 0;
+    padding: 0;
+    max-height: 400px;
+  }
 
 .avatar {
   height: 200px;
@@ -62,6 +79,13 @@
   resize: vertical;
 }
 
+.cover-container {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.timeline-left-info {
+  margin-left: 10px;
+}
 
 .nav #active {
   background-color: #eee; }
@@ -73,9 +97,9 @@
 .main {
   margin-top: 20px;
   padding-bottom: 40px;
-  border: 1px solid; }
+  border: 1px solid rgba(0, 0, 0, 0.5); }
   .main .nav {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     text-align: center; }
     .main .nav .btn {
       margin-right: 10px;
@@ -111,25 +135,25 @@
   .friends .profile span {
     display: block; }
 .friends .col-sm-10 {
-  border: 1px solid #eee; }
+  border: 1px solid rgba(0, 0, 0, 0.5); }
 .friends button {
   margin-left: 60px;
   box-shadow: 5px 5px 2px #eee; }
 
 .left-content .about-row {
   margin-top: 10px;
-  border: 1px solid; }
+  border: 1px solid rgba(0, 0, 0, 0.5); }
   .left-content .about-row .about-header {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     text-align: center;
     background-color: #eee; }
   .left-content .about-row .about-wrapper {
     padding-bottom: 15px; }
 .left-content .photos-row, .left-content .friends-row {
   margin-top: 10px;
-  border: 1px solid; }
+  border: 1px solid rgba(0, 0, 0, 0.5); }
   .left-content .photos-row .photos-header, .left-content .photos-row .friends-header, .left-content .friends-row .photos-header, .left-content .friends-row .friends-header {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     text-align: center;
     background-color: #eee; }
   .left-content .photos-row .thumbnails, .left-content .friends-row .thumbnails {
@@ -145,9 +169,9 @@
 
 .right-content .post-row, .right-content .comment-row {
   margin-top: 10px;
-  border: 1px solid; }
+  border: 1px solid rgba(0, 0, 0, 0.5); }
   .right-content .post-row .post-header, .right-content .comment-row .post-header {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     text-align: center;
     background-color: #eee; }
   .right-content .post-row .text-area, .right-content .comment-row .text-area {
@@ -173,7 +197,7 @@
   .right-content .post-row .comment-content, .right-content .comment-row .comment-content {
     padding: 0 10px; }
   .right-content .post-row .comment-footer, .right-content .comment-row .comment-footer {
-    border-top: 1px solid;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
     background-color: #eee; }
     .right-content .post-row .comment-footer .navbar-form a, .right-content .comment-row .comment-footer .navbar-form a {
       margin: 10px;
@@ -184,7 +208,7 @@
       margin-right: 10px; }
     .right-content .post-row .comment-footer .line-sep, .right-content .comment-row .comment-footer .line-sep {
       margin-top: 10px;
-      border: 1px solid #aaa; }
+      border: 1px solid rgba(0, 0, 0, 0.5); }
     .right-content .post-row .comment-footer .expanded-row, .right-content .comment-row .comment-footer .expanded-row {
       margin-top: 10px; }
       .right-content .post-row .comment-footer .expanded-row img, .right-content .comment-row .comment-footer .expanded-row img {
@@ -227,8 +251,19 @@
 
 // timeline csss
 
+.timeline-container {
+  background-color: #FFF;
+}
+
+.float-r {
+  float: right;
+  @media (max-width: 841px) {
+    float:none;
+  }
+}
+
 .post {
-  border: 1px solid #aaa;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 2%;
   .footer {
     padding-top: 10px;
@@ -256,6 +291,10 @@
 
 }
 
+.post-form {
+  padding-top: 10px;
+}
+
 // header
 
 .avatar-container {
@@ -266,4 +305,39 @@
     color: #fff;
     display: inline;
   }
+}
+
+.header-container {
+  margin-bottom: 20px;
+}
+
+.header-row {
+  background-color: #FFF;
+}
+
+// About Page
+
+.about-container {
+  background-color: #FFF;
+}
+
+.about-title {
+  display: inline-block
+}
+
+// Photos
+
+.photos-container {
+  background-color: #FFF;
+}
+
+.file-upload {
+  padding: 15px 0;
+  padding-left: 50px;
+}
+
+// Friends
+
+.friends-container {
+  background-color: #FFF;
 }

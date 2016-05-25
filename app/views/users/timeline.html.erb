@@ -1,17 +1,15 @@
 <%= render partial: '/shared/header' %>
 
-<main>
-
-  <div class="container main">
-
-    <section class="left-content col-sm-4">
+<main class="container cover-container timeline-container">
+  <div class="row">
+    <section class="left-content col-sm-4 timeline-left-info">
       <div class="about-row row">
         <div class="about-wrapper col-sm-12">
 
           <div class="about-header row">
             About (Text Area)
           </div>
-          
+
 
           <div class="content row">
             <div class="col-md-3 col-md-offset-1">
@@ -88,21 +86,17 @@
               <a href="#" class="more-friends">See More friends</a>
             </footer>
           </div>
-        </div>  
-
+        </div>
       </div><!-- End Photos Container -->
-
-
     </section>
 
     <!-- Right Side Content -->
-    <section class="right-content col-sm-7 col-sm-offset-1">
+    <section class="float-r col-sm-7">
+        <%= render partial: 'posts/post_form' %>
 
-      <%= render partial: 'posts/post_form' %>
-
-      <div id="post-feed">
-        <%= render @user.posts %>
-      </div>
-     
+        <div id="post-feed">
+          <%= render @user.posts %>
+        </div>
     </section>
+
 </main>

@@ -3,7 +3,7 @@
     <% if post.author.avatar.nil? %>
       <img src="/images/icon_photo_small.png" class="img-responsive thumbnail">
     <% else %>
-      <%= image_tag post.author.image.url(:thumb), class: "img-responsive", alt: "missing photo" %>
+      <%= image_tag post.author.avatar.image.url(:thumb), class: "img-responsive", alt: "missing photo" %>
     <% end %>
   </div>
 
