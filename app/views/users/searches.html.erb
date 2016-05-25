@@ -5,9 +5,13 @@
     <h3>Search Results</h3>
   </div>
   <% @matches.each do |match| %>
-    <div class="row">
+    <div class="row search-list">
       <div class="col-xs-3">
-        <img class="frnd-img" src="/assets/default_user.gif">
+        <% if match.avatar.nil? %>
+          <img src="/images/icon_photo_small.png" class="img-responsive img-thumbnail">
+        <% else %>
+          <%= image_tag match.avatar.image.url, class: "img-thumbnail img-responsive", alt: "missing photo" %>
+        <% end %>
       </div>
       <div class="col-xs-4">
         <div>

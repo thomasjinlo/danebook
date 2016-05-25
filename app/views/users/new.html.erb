@@ -1,6 +1,6 @@
 
   <!-- Navbar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-container">
       <div class="container">
 
       <!-- Navbar Header -->
@@ -28,20 +28,20 @@
                 <%= password_field_tag :password, "", class: "form-control", placeholder: "Password" %>
               </div>
             </div>
-            <%= submit_tag "Log In", class: "btn btn-default login" %>
+            <%= submit_tag "Log In", class: "btn btn-primary login" %>
             <div class="row">
               <div class="col-xs-6">
                 <%= check_box_tag :remember_me %>
                 <%= label_tag :remember_me, "Remember me?" %>
               </div>
             </div>
-            
+
           <% end %>
         </div>
       </div>
     </nav>
 
-    
+
 
     <main>
       <div class="container">
@@ -107,7 +107,7 @@
               <div class="form-group">
                 <%= pf.date_select(
                                   :birthday,
-                                  { 
+                                  {
                                     order: [
                                     :month,
                                     :day,
@@ -124,7 +124,7 @@
                                   %>
               </div>
             </div>
-      
+
           <!-- Radio Icons -->
           <div class="row radio-group">
             <div class="col-xs-12">
