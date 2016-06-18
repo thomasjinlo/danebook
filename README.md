@@ -14,6 +14,8 @@ Danebook is a Social Networking Application similar to Facebook. You can persona
 * AWS, PaperClip
 * Figaro
 * Faker
+* Polymorphic Associations
+* Custom AR Queries
 
 #### Usage
 
