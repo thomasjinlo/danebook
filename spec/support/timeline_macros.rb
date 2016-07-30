@@ -14,7 +14,7 @@ module TimelineMacros
 
   def like_post(user)
     make_post(user)
-    within(".post-like-delete") do
+    within(".post-like-container") do
       click_link "Like"
     end
   end

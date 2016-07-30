@@ -11,8 +11,8 @@ feature "Edit Users" do
   end
 
   context "as a not signed in user" do
-    
-    it "does not show edit link" do 
+
+    it "does not show edit link" do
       visit "users/1"
       expect(page).to_not have_content("Edit your profile")
       expect(page).to_not have_content("Edit Profile")
@@ -38,7 +38,8 @@ feature "Edit Users" do
 
     it "goes to edit page after clicking edit" do
       sign_in(user)
-      click_link "Edit Profile"
+      visit user_path(user)
+      click_link "Edit your profile"
       expect(page).to have_current_path(edit_user_path(user))
     end
 

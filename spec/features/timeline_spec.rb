@@ -4,7 +4,7 @@ feature "Posting on timeline" do
   let(:user) { create(:user) }
   let(:profile) { create(:profile, user: user) }
 
-  before do 
+  before do
     profile
     visit root_path
     sign_in(user)
@@ -17,7 +17,7 @@ feature "Posting on timeline" do
 
   scenario "delete a post" do
     make_post(user)
-    within(".post-like-delete") do
+    within(".post-like-container") do
       expect { click_link "Delete" }.to change { Post.count }.by(-1)
     end
     expect(page).to_not have_content("Great Post!")
@@ -30,7 +30,8 @@ feature "Posting on timeline" do
 
   scenario "unlike a post" do
     like_post(user)
-    within(".post-like-delete") do
+    save_and_open_page
+    within(".post-like-container") do
       expect { click_link "Unlike" }.to change { Like.count }.by(-1)
     end
     expect(page).to have_content("Like")
