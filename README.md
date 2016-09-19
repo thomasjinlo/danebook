@@ -8,14 +8,16 @@ Danebook is a Social Networking Application similar to Facebook. You can persona
 
 #### Cool things about this Application?
   
+* Session-based Authentication
 * Rails as an API
 * AJAX calls, JavaScript Templates
 * RSpec, Factory Girl, Capybara
 * AWS, PaperClip
-* Figaro
-* Faker
 * Polymorphic Associations
+* Self-refrencing Associations
 * Custom AR Queries
+* Seed file using Faker
+* Figaro env
 
 #### Usage
 
